@@ -1,7 +1,6 @@
 package symphony.strategy;
 
-import javax.sound.midi.ShortMessage;
-import javax.sound.midi.Track;
+import javax.sound.midi.*;
 
 public class AcousticGrandPianoStrategy implements InstrumentStrategy 
 {
@@ -15,7 +14,7 @@ public class AcousticGrandPianoStrategy implements InstrumentStrategy
 		MidiEvent event = new MidiEvent(message, 0);
 		track.add(event);
 		}
-		catch (exception e) 
+		catch (Exception e) 
 		{
 			System.out.println("Error: " + e.getMessage());
 		}

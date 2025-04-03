@@ -1,5 +1,7 @@
 package symphony.strategy;
 
+import javax.sound.midi.*;
+
 public class TrumpetStrategy implements InstrumentStrategy
 {
 	@Override
@@ -12,7 +14,7 @@ public class TrumpetStrategy implements InstrumentStrategy
 		MidiEvent event = new MidiEvent(message, 0);
 		track.add(event);
 		}
-		catch (exception e) 
+		catch (Exception e) 
 		{
 			System.out.println("Error: " + e.getMessage());
 		}

@@ -1,5 +1,7 @@
 package symphony.strategy;
 
+import javax.sound.midi.*;
+
 public class ElectricBassGuitarStrategy implements InstrumentStrategy
 {
 	@Override
