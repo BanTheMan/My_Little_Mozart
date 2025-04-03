@@ -11,7 +11,7 @@ import symphony.strategy.*;
 public class Main {
 	public static void main(String [] args) {
 		try {
-			List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("./ files /mystery");
+			List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("My_Little_Mozart/src/symphony/events/MidiEventData.csv");
 				Sequence sequence = new Sequence(Sequence.PPQ, 384);
 				Track track = sequence.createTrack();
 			MidiEventFactoryAbstract factoryAbstract = new StandardMidiEventFactoryAbstract();
