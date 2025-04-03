@@ -45,6 +45,8 @@ public class CSVParser {
 					events.add(event);
 				}
 			}
+		} catch (IOException e) {
+			System.out.println("Failed to parse");
 		}
 		return events;
 	}
