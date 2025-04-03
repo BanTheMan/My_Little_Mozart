@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CSVParser {
-	public static List<MidiEventData> parseCSV(String fp) throws IOException {
+public class MidiCsvParser {
+	public static List<MidiEventData> parseCsv(String fp) throws IOException {
 		List<MidiEventData> events = new ArrayList<>();
 		
 		try (BufferedReader reader = new BufferedReader(new FileReader(fp))) {
