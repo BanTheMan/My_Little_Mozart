@@ -8,7 +8,14 @@ import symphony.factory.*;
 import symphony.strategy.*;
 
 
+/**
+ * Author: Ekincan Ufuktepe
+ */
 public class Main {
+	/**
+	 * Play a song
+	 * @param args
+	 */
 	public static void main(String [] args) {
 		try { 
 			List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("My_Little_Mozart/src/symphony/events/mystery_song.csv");
@@ -50,9 +57,9 @@ public class Main {
 			sequencer.setSequence(sequence);
 			sequencer.start();
 			while (sequencer.isRunning() | sequencer.isOpen()) {
-				Thread.sleep (100);
+				Thread.sleep(100);
 			}
-			Thread.sleep (500);
+			Thread.sleep(500);
 			sequencer.close();
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -2,8 +2,15 @@ package symphony.strategy;
 
 import javax.sound.midi.*;
 
+/**
+ * Midi trumpet note strategy
+ * Author: Nate Spencer
+ */
 public class TrumpetStrategy implements InstrumentStrategy
 {
+	/**
+	 * Set a channel in the Midi track to play the trumpet
+	 */
 	@Override
 	public void applyInstrument(Track track , int channel) 
 	{

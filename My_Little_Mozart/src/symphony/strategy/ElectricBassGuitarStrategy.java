@@ -2,8 +2,15 @@ package symphony.strategy;
 
 import javax.sound.midi.*;
 
+/**
+ * Midi electric bass guitar note strategy
+ * Author: Nate Spencer
+ */
 public class ElectricBassGuitarStrategy implements InstrumentStrategy
 {
+	/**
+	 * Set a channel in the Midi track to play the electric bass guitar
+	 */
 	@Override
 	public void applyInstrument(Track track , int channel) 
 	{

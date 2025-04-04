@@ -2,8 +2,15 @@ package symphony.strategy;
 
 import javax.sound.midi.*;
 
+/**
+ * Midi acoustic grand piano note strategy
+ * Author: Nate Spencer
+ */
 public class AcousticGrandPianoStrategy implements InstrumentStrategy 
 {
+	/**
+	 * Set a channel in the Midi track to play the acoustic grand piano
+	 */
 	@Override
 	public void applyInstrument(Track track , int channel) 
 	{

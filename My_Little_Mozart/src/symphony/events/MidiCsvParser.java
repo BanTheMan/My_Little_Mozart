@@ -8,7 +8,17 @@ import java.util.List;
 
 import javax.sound.midi.ShortMessage;
 
+/**
+ * Class to retrieve song from csv file
+ * Author: Brandon Gomes
+ */
 public class MidiCsvParser {
+	/**
+	 * Read song data from csv file
+	 * @param fp file path to csv file with song data
+	 * @return List of Midi events from csv file
+	 * @throws IOException
+	 */
 	public static List<MidiEventData> parseCsv(String fp) throws IOException {
 		List<MidiEventData> events = new ArrayList<>();
 		
@@ -17,8 +27,10 @@ public class MidiCsvParser {
 			
 			// Neat trick!!
 			while ((line = reader.readLine()) != null) {
+				// Parse line
 				String[] values = line.split(",");
 				if (values.length == 6) {
+					// Retrieve each data value
 					int startEndTick = Integer.parseInt(values[0]);
 					
 					int Note_on_off;

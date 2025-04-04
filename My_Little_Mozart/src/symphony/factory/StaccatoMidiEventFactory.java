@@ -2,8 +2,15 @@ package symphony.factory;
 
 import javax.sound.midi.*;
 
+/**
+ * Staccato Midi event factory
+ * Author: Brandon Gomes
+ */
 public class StaccatoMidiEventFactory implements MidiEventFactory {
 
+	/**
+	 * Create a staccato note start event
+	 */
 	@Override
 	public MidiEvent createNoteOn(int tick, int note, int velocity, int channel) throws InvalidMidiDataException {
 		ShortMessage message = new ShortMessage();
@@ -11,6 +18,9 @@ public class StaccatoMidiEventFactory implements MidiEventFactory {
 		return new MidiEvent(message, tick-120);
 	}
 
+	/**
+	 * Create a staccato note end event
+	 */
 	@Override
 	public MidiEvent createNoteOff(int tick, int note, int channel) throws InvalidMidiDataException {
 		ShortMessage message = new ShortMessage();
