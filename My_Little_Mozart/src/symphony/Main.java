@@ -10,7 +10,7 @@ import symphony.strategy.*;
 
 public class Main {
 	public static void main(String [] args) {
-		try {
+		try { 
 			List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("My_Little_Mozart/src/symphony/events/mystery_song.csv");
 				Sequence sequence = new Sequence(Sequence.PPQ, 384);
 				Track track = sequence.createTrack();
@@ -42,20 +42,7 @@ public class Main {
 				else {
 					track.add(factory.createNoteOff(event.getStartEndTick(), modifiedNote, event.getChannel()));
 				}
-				
-				// Inside your for loop after adding an event
-				if (event.getNoteOnOff() == ShortMessage.NOTE_ON) {
-				    System.out.println("Added NOTE_ON: Tick=" + event.getStartEndTick() + 
-				                      ", Note=" + modifiedNote + 
-				                      ", Velocity=" + event.getVelocity() + 
-				                      ", Channel=" + event.getChannel());
-				} else {
-				    System.out.println("Added NOTE_OFF: Tick=" + event.getStartEndTick() + 
-				                      ", Note=" + modifiedNote + 
-				                      ", Channel=" + event.getChannel());
-				}
 			}
-			
 			
 			// Playing the sequence
 			Sequencer sequencer = MidiSystem.getSequencer();

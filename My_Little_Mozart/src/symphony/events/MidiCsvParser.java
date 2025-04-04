@@ -22,9 +22,9 @@ public class MidiCsvParser {
 					int startEndTick = Integer.parseInt(values[0]);
 					
 					int Note_on_off;
-					if (values[1].equals("Note_on_c")) {
+					if (values[1].equals(" Note_on_c")) {
 						Note_on_off = ShortMessage.NOTE_ON;
-					} else if (values[1].equals("Note_off_c")) {
+					} else if (values[1].equals(" Note_off_c")) {
 						Note_on_off = ShortMessage.NOTE_OFF;
 					} else {continue;}
 					
@@ -47,7 +47,6 @@ public class MidiCsvParser {
 				}
 			}
 		} catch (IOException e) {
-			System.out.println("Failed to parse");
 		}
 		return events;
 	}
