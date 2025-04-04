@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sound.midi.ShortMessage;
+
 public class MidiCsvParser {
 	public static List<MidiEventData> parseCsv(String fp) throws IOException {
 		List<MidiEventData> events = new ArrayList<>();
@@ -19,12 +21,11 @@ public class MidiCsvParser {
 				if (values.length == 6) {
 					int startEndTick = Integer.parseInt(values[0]);
 					
-					// Binarily represent Note_on_off
 					int Note_on_off;
 					if (values[1].equals("Note_on_c")) {
-						Note_on_off = 1;
+						Note_on_off = ShortMessage.NOTE_ON;
 					} else if (values[1].equals("Note_off_c")) {
-						Note_on_off = 0;
+						Note_on_off = ShortMessage.NOTE_OFF;
 					} else {continue;}
 					
 					int channel = Integer.parseInt(values[2]);

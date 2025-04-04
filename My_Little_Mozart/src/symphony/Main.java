@@ -11,18 +11,22 @@ import symphony.strategy.*;
 public class Main {
 	public static void main(String [] args) {
 		try {
-			List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("My_Little_Mozart/src/symphony/events/MidiEventData.csv");
+			List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("My_Little_Mozart/src/symphony/events/mystery_song.csv");
 				Sequence sequence = new Sequence(Sequence.PPQ, 384);
 				Track track = sequence.createTrack();
+				
 			MidiEventFactoryAbstract factoryAbstract = new StandardMidiEventFactoryAbstract();
 			// MidiEventFactoryAbstract factoryAbstract = new LegatoMidiEventFactoryAbstract();
 			// MidiEventFactoryAbstract factoryAbstract = new StaccatoMidiEventFactoryAbstract();
+			
 			MidiEventFactory factory = factoryAbstract.createFactory();
+			
 			// Choose an instrument strategy (e.g. , Trumpet, Bass Guitar , Piano)
 			InstrumentStrategy instrumentStrategy = new ElectricBassGuitarStrategy();
 			instrumentStrategy.applyInstrument(track, 0);
 			instrumentStrategy = new TrumpetStrategy();
 			instrumentStrategy.applyInstrument(track, 1);
+			
 			// Choose a pitch strategy (e.g. , HigherPitch , LowerPitch)
 			PitchStrategy pitchStrategy = new HigherPitchStrategy();
 			for (MidiEventData event : midiEvents) {
@@ -38,7 +42,21 @@ public class Main {
 				else {
 					track.add(factory.createNoteOff(event.getStartEndTick(), modifiedNote, event.getChannel()));
 				}
+				
+				// Inside your for loop after adding an event
+				if (event.getNoteOnOff() == ShortMessage.NOTE_ON) {
+				    System.out.println("Added NOTE_ON: Tick=" + event.getStartEndTick() + 
+				                      ", Note=" + modifiedNote + 
+				                      ", Velocity=" + event.getVelocity() + 
+				                      ", Channel=" + event.getChannel());
+				} else {
+				    System.out.println("Added NOTE_OFF: Tick=" + event.getStartEndTick() + 
+				                      ", Note=" + modifiedNote + 
+				                      ", Channel=" + event.getChannel());
+				}
 			}
+			
+			
 			// Playing the sequence
 			Sequencer sequencer = MidiSystem.getSequencer();
 			sequencer.open();
