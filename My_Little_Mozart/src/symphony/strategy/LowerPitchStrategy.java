@@ -2,7 +2,7 @@ package symphony.strategy;
 
 /**
  * Lower pitch strategy
- * Author: Ivan Rhodes
+ * Author: Nate Spencer
  */
 public class LowerPitchStrategy implements PitchStrategy {
 

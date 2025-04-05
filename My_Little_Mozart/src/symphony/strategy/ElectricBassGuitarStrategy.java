@@ -4,7 +4,7 @@ import javax.sound.midi.*;
 
 /**
  * Midi electric bass guitar note strategy
- * Author: Nate Spencer
+ * Author: Ivan Rhodes
  */
 public class ElectricBassGuitarStrategy implements InstrumentStrategy
 {

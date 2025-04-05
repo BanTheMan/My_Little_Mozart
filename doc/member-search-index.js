@@ -1,1 +1,1 @@
-memberSearchIndex = [];updateSearchResults();
+memberSearchIndex = [{"p":"symphony.strategy","c":"TrumpetStrategy","l":"applyInstrument(Track, int)","u":"applyInstrument(javax.sound.midi.Track,int)"},{"p":"symphony.strategy","c":"TrumpetStrategy","l":"TrumpetStrategy()","u":"%3Cinit%3E()"}];updateSearchResults();

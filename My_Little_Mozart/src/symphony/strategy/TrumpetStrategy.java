@@ -4,7 +4,7 @@ import javax.sound.midi.*;
 
 /**
  * Midi trumpet note strategy
- * Author: Nate Spencer
+ * Author: Ivan Rhodes
  */
 public class TrumpetStrategy implements InstrumentStrategy
 {

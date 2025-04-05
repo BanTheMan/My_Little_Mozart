@@ -4,7 +4,7 @@ import javax.sound.midi.*;
 
 /**
  * Midi acoustic grand piano note strategy
- * Author: Nate Spencer
+ * Author: Ivan Rhodes
  */
 public class AcousticGrandPianoStrategy implements InstrumentStrategy 
 {

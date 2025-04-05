@@ -1,1 +1,1 @@
-packageSearchIndex = [];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"My_Little_Mozart","l":"symphony.strategy"}];updateSearchResults();

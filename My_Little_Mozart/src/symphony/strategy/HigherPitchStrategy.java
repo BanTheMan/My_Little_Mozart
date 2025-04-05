@@ -2,10 +2,10 @@ package symphony.strategy;
 
 /**
  * Higher pitch strategy
- * Author: Ivan Rhodes
+ * Author: Nate Spencer
  */
 public class HigherPitchStrategy implements PitchStrategy {
-
+	
 	/**
 	 *	Increase a note's pitch
 	 */
@@ -13,5 +13,4 @@ public class HigherPitchStrategy implements PitchStrategy {
 	public int modifyPitch(int note) {
 		return note + 2;
 	}
-	
 }
